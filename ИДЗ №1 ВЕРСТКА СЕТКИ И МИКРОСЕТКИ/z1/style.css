@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ЦЕНТРИРОВАНИЕ ШАБЛОНА */
+body {
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ФИКСИРОВАННАЯ ШИРИНА 1600px */
+.fixed-container {
+    width: 1600px;
+    background: white;
+}
+
+/* ОБЩИЕ СТИЛИ БЛОКОВ + РАЗНЫЕ ЦВЕТА */
+.block {
+    padding: 20px;
+    border: 1px solid #999;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* ЦВЕТА БЛОКОВ ДЛЯ ПРОВЕРКИ */
+.header { background: #ffb3ba; }
+.block-1 { background: #baffc9; }
+.block-2 { background: #bae1ff; }
+.block-3 { background: #ffffba; }
+.block-4 { background: #ffdfba; }
+.block-5 { background: #d4a5ff; }
+.block-6 { background: #ffb7b2; }
+.footer { background: #c0e0e0; }
+
+/* ШАПКА: ЛОГО + МЕНЮ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px;
+}
+.horizontal-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+.horizontal-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.horizontal-menu a:hover {
+    color: #0066cc;
+}
+
+/* ОСНОВНАЯ СЕТКА: 3 КОЛОНКИ */
+.main-grid {
+    display: flex;
+    min-height: 500px;
+}
+
+/* ЛЕВАЯ КОЛОНКА: 500px, внутри блоки 1,2,3 вертикально */
+.left-col {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.left-col .block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ЦЕНТРАЛЬНАЯ КОЛОНКА: 700px */
+.center-col {
+    width: 700px;
+}
+.block-4 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ПРАВАЯ КОЛОНКА:  */
+.right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.right-col .block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ПОДВАЛ */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.social-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #0066cc;
+}
+.social-links a:hover {
+    text-decoration: underline;
+}

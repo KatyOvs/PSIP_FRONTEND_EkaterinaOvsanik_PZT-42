@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e0e0e0;
+}
+
+.fluid-container {
+    width: 100%;
+    background: white;
+}
+
+.block {
+    padding: 20px;
+    border: 1px solid #999;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Цвета блоков */
+.header { background: #ffb3ba; }
+.block-1 { background: #baffc9; }
+.block-2 { background: #bae1ff; }
+.block-3 { background: #ffffba; }
+.block-4 { background: #ffdfba; }
+.block-5 { background: #d4a5ff; }
+.block-6 { background: #ffb7b2; }
+.footer { background: #c0e0e0; }
+
+/* ШАПКА */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px;
+}
+
+.horizontal-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.horizontal-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* ОСНОВНАЯ СЕТКА: 3 колонки */
+.main-grid {
+    display: flex;
+    min-height: 500px;
+}
+
+/* Левая колонка: 30% (блоки 1,2,3 внутри) */
+.left-col {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.left-col .block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Центральная колонка: 40% */
+.center-col {
+    width: 40%;
+}
+.block-4 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Правая колонка: оставшиеся 30%  */
+.right-col {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.right-col .block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ПОДВАЛ */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #0066cc;
+}
