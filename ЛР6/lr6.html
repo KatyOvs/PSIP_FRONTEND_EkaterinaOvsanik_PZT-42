@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid: все свойства</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: white;
+            margin: 20px;
+        }
+        .grid {
+            display: grid;
+            background: #e0e0e0;
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #333;
+            gap: 8px;
+        }
+        .item {
+            background: #ff9800;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #000;
+            font-weight: bold;
+        }
+        .item:nth-child(even) {
+            background: #ffb74d;
+        }
+        hr {
+            margin: 30px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            display: inline-block;
+            margin: 4px 0;
+            font-size: 14px;
+        }
+        .note {
+            color: #555;
+            font-size: 12px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS Grid — свойства контейнера и элементов</h1>
+
+<!-- ==================== СВОЙСТВА КОНТЕЙНЕРА ==================== -->
+
+<!-- 1. display: grid -->
+<h2>📦 Свойства контейнера</h2>
+<code>1. display: grid</code>
+<div class="grid" style="display: grid;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+</div>
+
+<!-- 2. grid-template-rows -->
+<code>2. grid-template-rows: 50px 100px (первые две строки 50px и 100px)</code>
+<div class="grid" style="grid-template-rows: 50px 100px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 3. grid-template-columns -->
+<code>3. grid-template-columns: 100px 200px 100px (три колонки разной ширины)</code>
+<div class="grid" style="grid-template-columns: 100px 200px 100px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 4. grid-template-areas (именованные области) -->
+<code>4. grid-template-areas: "header header" "sidebar main" "footer footer"</code>
+<div class="grid" style="grid-template-areas: 'header header' 'sidebar main' 'footer footer'; grid-template-columns: 150px 1fr; max-width: 500px;">
+    <div class="item" style="grid-area: header;">header</div>
+    <div class="item" style="grid-area: sidebar;">sidebar</div>
+    <div class="item" style="grid-area: main;">main</div>
+    <div class="item" style="grid-area: footer;">footer</div>
+</div>
+
+<!-- 5. grid-template (сокращение для rows + columns + areas) -->
+<code>5. grid-template: "a a" 50px "b c" 80px / 100px 1fr</code>
+<div class="grid" style="grid-template: 'a a' 50px 'b c' 80px / 100px 1fr; max-width: 400px;">
+    <div class="item" style="grid-area: a;">A</div>
+    <div class="item" style="grid-area: b;">B</div>
+    <div class="item" style="grid-area: c;">C</div>
+</div>
+
+<!-- 6. repeat() функция -->
+<code>6. repeat(3, 100px) — три колонки по 100px</code>
+<div class="grid" style="grid-template-columns: repeat(3, 100px);">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 7. minmax() функция -->
+<code>7. minmax(80px, 150px) — колонка от 80px до 150px</code>
+<div class="grid" style="grid-template-columns: minmax(80px, 150px) minmax(80px, 150px);">
+    <div class="item">узкая</div>
+    <div class="item">тоже</div>
+</div>
+
+<!-- 8. grid-row-gap + 9. grid-column-gap + 10. grid-gap -->
+<code>8. grid-row-gap: 20px;</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr; grid-row-gap: 20px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<code>9. grid-column-gap: 30px;</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr; grid-column-gap: 30px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+</div>
+
+<code>10. grid-gap: 20px 40px; (row-gap column-gap)</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr; grid-gap: 20px 40px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 11. align-content (по вертикали) -->
+<code>11. align-content: center; (контейнер высотой 200px)</code>
+<div class="grid" style="grid-template-columns: 100px 100px; grid-template-rows: 40px 40px; height: 200px; align-content: center;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 12. justify-content (по горизонтали) -->
+<code>12. justify-content: center; (контейнер шириной 400px)</code>
+<div class="grid" style="grid-template-columns: 100px 100px; width: 400px; justify-content: center;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+</div>
+
+<!-- 13. place-content = align-content + justify-content -->
+<code>13. place-content: center; (выравнивание по центру по обеим осям)</code>
+<div class="grid" style="grid-template-columns: 100px 100px; grid-template-rows: 50px 50px; width: 350px; height: 180px; place-content: center;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 14. align-items (выравнивание элементов по вертикали внутри ячеек) -->
+<code>14. align-items: center; (разная высота элементов)</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr; height: 120px; align-items: center;">
+    <div class="item" style="height: 40px;">40px</div>
+    <div class="item" style="height: 80px;">80px</div>
+</div>
+
+<!-- 15. justify-items (выравнивание элементов по горизонтали внутри ячеек) -->
+<code>15. justify-items: center; (элементы по центру ячеек)</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr; justify-items: center;">
+    <div class="item" style="width: 60px;">60px</div>
+    <div class="item" style="width: 100px;">100px</div>
+</div>
+
+<!-- 16. place-items = align-items + justify-items -->
+<code>16. place-items: center; (элементы по центру ячеек и по вертикали, и по горизонтали)</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr; height: 100px; place-items: center;">
+    <div class="item" style="width: 60px; height: 30px;">центр</div>
+    <div class="item" style="width: 80px; height: 40px;">центр</div>
+</div>
+
+<!-- 17. grid-auto-rows (размер автоматически созданных строк) -->
+<code>17. grid-auto-rows: 80px; (все новые строки по 80px)</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr; grid-auto-rows: 80px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5 (новая строка 80px)</div>
+</div>
+
+<!-- 18. grid-auto-columns (размер автоматически созданных колонок) -->
+<code>18. grid-auto-columns: 120px; (при grid-auto-flow: column)</code>
+<div class="grid" style="grid-auto-flow: column; grid-auto-columns: 120px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 19. grid-auto-flow (как заполняется сетка: row или column) -->
+<code>19. grid-auto-flow: column; (заполнение по колонкам)</code>
+<div class="grid" style="grid-template-rows: repeat(2, 50px); grid-auto-flow: column; grid-auto-columns: 80px;">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+</div>
+
+<!-- 20. grid (сокращение) -->
+<code>20. grid: "a b" 50px "c d" 50px / 100px 100px;</code>
+<div class="grid" style="grid: 'a b' 50px 'c d' 50px / 100px 100px;">
+    <div class="item" style="grid-area: a;">A</div>
+    <div class="item" style="grid-area: b;">B</div>
+    <div class="item" style="grid-area: c;">C</div>
+    <div class="item" style="grid-area: d;">D</div>
+</div>
+
+<hr>
+
+<!-- ==================== СВОЙСТВА ЭЛЕМЕНТОВ ==================== -->
+<h2>🎯 Свойства элементов</h2>
+
+<!-- 21. grid-row-start / grid-row-end -->
+<code>21. grid-row-start: 2; grid-row-end: 4; (элемент 1 занимает строки 2-3)</code>
+<div class="grid" style="grid-template-rows: repeat(3, 50px); grid-template-columns: 1fr 1fr;">
+    <div class="item" style="grid-row-start: 2; grid-row-end: 4;">элемент 1<br>строки 2-3</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 22. grid-column-start / grid-column-end -->
+<code>22. grid-column-start: 1; grid-column-end: 3; (элемент 1 занимает колонки 1-2)</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr;">
+    <div class="item" style="grid-column-start: 1; grid-column-end: 3;">элемент 1<br>колонки 1-2</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+</div>
+
+<!-- 23. grid-row (сокращение start/end) -->
+<code>23. grid-row: 2 / 4; (элемент 1 занимает строки со 2 по 3)</code>
+<div class="grid" style="grid-template-rows: repeat(3, 50px); grid-template-columns: 1fr 1fr;">
+    <div class="item" style="grid-row: 2 / 4;">эл.1<br>строки 2-3</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+
+<!-- 24. grid-column (сокращение start/end) -->
+<code>24. grid-column: 1 / 3; (элемент 1 занимает колонки 1-2)</code>
+<div class="grid" style="grid-template-columns: 1fr 1fr;">
+    <div class="item" style="grid-column: 1 / 3;">эл.1<br>колонки 1-2</div>
+    <div class="item">2</div>
+</div>
+
+<!-- 25. grid (сокращение для row/column) -->
+<code>25. grid: 1 / 3 / 2 / 4; (row-start / col-start / row-end / col-end)</code>
+<div class="grid" style="grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 50px);">
+    <div class="item" style="background: #ff5722; grid: 1 / 2 / 3 / 4;">эл.1<br>строки 1-2<br>колонки 2-3</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
+
+<div class="note">✅ Все свойства продемонстрированы. Каждый пример показывает ровно одно свойство (или сокращение).</div>
+
+</body>
+</html>

@@ -1,0 +1,468 @@
+/* ДЛЯ БЛОКА 4  */
+
+/* Контейнер блока 4 */
+.block-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Карточка товара внутри блока 4 */
+.block-4 .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    margin: 0;
+}
+
+/* Левая часть с изображением */
+.block-4 .card .card-image {
+    flex-shrink: 0;
+}
+
+.block-4 .card .card-image img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+/* Правая часть — flex в две колонки */
+.block-4 .card .card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Левая колонка с характеристиками */
+.block-4 .card .info-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Правая колонка (цена, баллы, кнопки) */
+.block-4 .card .info-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* Блок с кнопками и переключателем */
+.block-4 .card .actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+    flex-direction: row;
+}
+
+/*  АДАПТИВНОСТЬ ДЛЯ КАРТОЧКИ В БЛОКЕ 4 */
+
+/* Планшеты (до 700px) */
+@media (max-width: 700px) {
+    .block-4 .card .card-info {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .block-4 .card .info-right {
+        align-items: flex-start;
+    }
+    
+    .block-4 .card .actions {
+        justify-content: flex-start;
+    }
+}
+
+/* Мобильные устройства (до 550px) */
+@media (max-width: 550px) {
+    .block-4 .card {
+        flex-direction: column;
+    }
+    
+    .block-4 .card .card-info {
+        flex-direction: column;
+    }
+}
+/* Обнуление стандартных отступов и границ у всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Стили для фона страницы и центрирования карточки */
+body {
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Карточка товара: флекс-контейнер с белым фоном и тенью */
+.card {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    max-width: 850px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+}
+
+/* Бейдж "рассрочка" */
+.badge {
+    background: linear-gradient(90deg, #ffcc00, #ffffff);
+    color: #666;
+    font-size: clamp(10px, 3vw, 12px);
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.card-image {
+    flex-shrink: 0;
+    max-width: 30%;
+}
+
+.card-image img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.card-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.info-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+.product-title {
+    font-weight: bold;
+    font-size: clamp(14px, 4vw, 18px);
+    margin-bottom: 5px;
+}
+
+.availability {
+    font-size: clamp(11px, 3vw, 13px);
+    color: #999;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.stars {
+    display: flex;
+    gap: 3px;
+}
+
+.star {
+    font-size: clamp(14px, 4vw, 18px);
+    color: #ccc;
+}
+
+.star.filled {
+    color: #ffcc00;
+}
+
+.rating-count {
+    font-size: clamp(11px, 3vw, 13px);
+    color: #666;
+}
+
+.specs {
+    text-align: left;
+    font-size: clamp(11px, 3vw, 13px);
+    color: #333;
+    line-height: 1.6;
+}
+
+.specs p {
+    margin-bottom: 4px;
+}
+
+/* Правая часть (цена, баллы, кнопки) */
+.info-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.price {
+    font-weight: bold;
+    font-size: clamp(14px, 4.5vw, 20px);
+    color: #333;
+    text-align: right;
+    max-width: 100%;
+}
+
+.points {
+    background: #e8d5ff;
+    padding: 4px 8px;
+    font-size: clamp(11px, 3vw, 13px);
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 100%;
+}
+
+.compare-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(11px, 3.5vw, 14px);
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.switch-input {
+    display: none;
+}
+
+.switch-slider {
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.switch-slider::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    top: 2px;
+    left: 3px;
+    transition: 0.3s;
+}
+
+.switch-input:checked + .switch-slider::before {
+    left: 21px;
+}
+
+.buy-btn {
+    background: linear-gradient(135deg, #ff8c00, #ffaa00);
+    border: none;
+    padding: 8px clamp(12px, 4vw, 20px);
+    border-radius: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(12px, 3.5vw, 14px);
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.buy-btn:hover {
+    opacity: 0.9;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Планшеты (992px и меньше) - исправленная версия */
+@media screen and (max-width: 992px) {
+    .card {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    
+    .card-image {
+        max-width: 25%;
+    }
+    
+    .card-image img {
+        max-width: 100%;
+    }
+    
+    /* Главное исправление: на планшетах делаем карточку вертикальной */
+    .card-info {
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
+    
+    .info-left {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .info-right {
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .price {
+        text-align: left;
+    }
+    
+    .actions {
+        justify-content: flex-start;
+    }
+    
+    .specs {
+        text-align: left;
+    }
+}
+
+/* Мобильные (768px и меньше) */
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+        padding: 16px;
+    }
+    
+    .card-image {
+        max-width: 50%;
+        text-align: center;
+    }
+    
+    .card-image img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .card-info {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .info-left {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .info-right {
+        align-items: center;
+        width: 100%;
+    }
+    
+    .specs {
+        text-align: center;
+    }
+    
+    .price {
+        text-align: center;
+    }
+    
+    .badge {
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+    
+    .rating {
+        justify-content: center;
+    }
+    
+    .actions {
+        justify-content: center;
+    }
+    
+    .compare-switch {
+        white-space: normal;
+    }
+    
+    .buy-btn {
+        white-space: nowrap;
+    }
+}
+
+/* Очень маленькие экраны (480px и меньше) */
+@media screen and (max-width: 480px) {
+    .card {
+        padding: 12px;
+    }
+    
+    .actions {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .compare-switch {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .buy-btn {
+        white-space: normal;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Дополнительная страховка для переключателя */
+.switch-input:checked + .switch-slider {
+    background: #ff8c00;
+}
+
+.switch-slider::before {
+    position: absolute;
+}
+
+.switch-slider {
+    position: relative;
+}
