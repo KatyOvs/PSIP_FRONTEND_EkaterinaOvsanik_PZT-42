@@ -1,0 +1,191 @@
+/*ПОДКЛЮЧЕНИЕ ШРИФТОВ*/
+@font-face {
+    font-family: 'GoodVibesPro';
+    src: local('Good Vibes Pro'),
+         url('fonts/GoodVibesPro.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'ShakespeareAntiqua';
+    src: url('fonts/Shakespeare Antiqua.ttf') format('truetype');
+}
+
+/* ЦВЕТА И ФОН*/
+body {
+    font-family: 'ShakespeareAntiqua', Arial, sans-serif;
+    background-color: #f9f5f0; 
+    color: #524B49; 
+    margin: 20px;
+}
+
+h1 {
+    font-family: 'GoodVibesPro', cursive;
+    text-align: center;
+    color: #755c8c; 
+}
+
+/*ОФОРМЛЕНИЕ ТЕКСТА*/
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+/* СТИЛИЗАЦИЯ ГИПЕРССЫЛОК */
+a {
+    color: #755c8c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #db5952;
+    text-decoration: underline;
+}
+
+/*  ОФОРМЛЕНИЕ ИЗОБРАЖЕНИЙ*/
+img {
+    border-radius: 20px; 
+    border: 3px solid #c290ba; 
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3); 
+    max-width: 300px;
+}
+
+.circle {
+    border-radius: 50%; 
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* СТИЛИЗАЦИЯ СПИСКОВ */
+ul {
+    list-style-type: none;
+}
+
+ul li::before {
+    content: "◆"; 
+    color: #c290ba;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/*7. СТИЛИЗАЦИЯ ТАБЛИЦ */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+th {
+    background-color: #755c8c;
+    color: white;
+    border: 2px solid #524B49;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #c290ba;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2e6f0; 
+}
+
+/*  СТИЛИЗАЦИЯ КНОПОК И ПОЛЕЙ */
+input, select, textarea {
+    border: 2px solid #c290ba;
+    border-radius: 5px;
+    padding: 8px;
+    width: 250px;
+    font-family: 'ShakespeareAntiqua', Arial, sans-serif;
+}
+
+button {
+    background-color: #755c8c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #db5952;
+}
+
+/* Стили для формы */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    width: 140px;
+    font-weight: bold;
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+/* АНИМАЦИЯ И ТРАНСФОРМАЦИЯ */
+.animate {
+    width: 100px;
+    height: 100px;
+    background-color: #c290ba;
+    transition: transform 0.5s;
+}
+
+.animate:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+/* КАСКАДНОСТЬ */
+p {
+    color: black;
+}
+
+
+.text-class {
+    color: #755c8c;
+}
+
+#text-id {
+    color: #db5952;
+}
