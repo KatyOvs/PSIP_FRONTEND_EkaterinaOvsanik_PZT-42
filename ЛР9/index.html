@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Операторы и диалоговые окна</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- СПОСОБ 1: Внутренний JS в head -->
+    <script>
+        // Оператор if
+        function checkTime() {
+            var d = new Date();
+            var time = d.getHours();
+            var message = "";
+            
+            if (time < 10) {
+                message = "Доброе утро!";
+            } else if (time < 18) {
+                message = "Добрый день!";
+            } else {
+                message = "Добрый вечер!";
+            }
+            
+            document.getElementById('output').innerHTML = "Текущий час: " + time + "\n" + message;
+        }
+        
+        // Оператор switch
+        function showDay() {
+            var d = new Date();
+            var day = d.getDay();
+            var dayName = "";
+            
+            switch (day) {
+                case 0: dayName = "Воскресенье"; break;
+                case 1: dayName = "Понедельник"; break;
+                case 2: dayName = "Вторник"; break;
+                case 3: dayName = "Среда"; break;
+                case 4: dayName = "Четверг"; break;
+                case 5: dayName = "Пятница"; break;
+                case 6: dayName = "Суббота"; break;
+            }
+            
+            document.getElementById('output').innerHTML = "Сегодня: " + dayName;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript - Операторы и диалоговые окна</h1>
+        
+        <!-- СПОСОБ 4: Inline JS в onclick -->
+        <div class="section">
+            <h2>Операторы if и switch</h2>
+            <button onclick="checkTime()">Проверить время (if)</button>
+            <button onclick="showDay()">Узнать день (switch)</button>
+            <div id="output" class="output">Результат будет здесь...</div>
+        </div>
+        
+        <!-- Циклы -->
+        <div class="section">
+            <h2>Циклы (for, while, do...while)</h2>
+            <button onclick="showFor()">Цикл for</button>
+            <button onclick="showWhile()">Цикл while</button>
+            <button onclick="showDoWhile()">Цикл do...while</button>
+            <div id="loopOutput" class="output">Результат будет здесь...</div>
+        </div>
+        
+        <!-- break и continue -->
+        <div class="section">
+            <h2>Операторы break и continue</h2>
+            <button onclick="showBreak()">break</button>
+            <button onclick="showContinue()">continue</button>
+            <div id="bcOutput" class="output">Результат будет здесь...</div>
+        </div>
+        
+        <!-- return -->
+        <div class="section">
+            <h2>Оператор return</h2>
+            <button onclick="showReturn()">Вычислить</button>
+            <div id="returnOutput" class="output">Результат будет здесь...</div>
+        </div>
+        
+        <!-- Диалоговые окна -->
+        <div class="section">
+            <h2>Диалоговые окна</h2>
+            <button onclick="showAlert()">alert</button>
+            <button onclick="showConfirm()">confirm</button>
+            <button onclick="showPrompt()">prompt</button>
+            <div id="dialogOutput" class="output">Результат будет здесь...</div>
+        </div>
+    </div>
+    
+    <!-- СПОСОБ 2: Внутренний JS в body -->
+    <script>
+        // Цикл for
+        function showFor() {
+            var output = "Цикл for (1-5): ";
+            for (var i = 1; i <= 5; i++) {
+                output += i + " ";
+            }
+            document.getElementById('loopOutput').innerHTML = output;
+        }
+        
+        // Цикл while
+        function showWhile() {
+            var output = "Цикл while (четные до 10): ";
+            var i = 2;
+            while (i <= 10) {
+                output += i + " ";
+                i += 2;
+            }
+            document.getElementById('loopOutput').innerHTML = output;
+        }
+        
+        // Цикл do...while
+        function showDoWhile() {
+            var output = "Цикл do...while (1-5): ";
+            var i = 1;
+            do {
+                output += i + " ";
+                i++;
+            } while (i <= 5);
+            document.getElementById('loopOutput').innerHTML = output;
+        }
+        
+        // break
+        function showBreak() {
+            var output = "break (остановка на 3): ";
+            for (var i = 1; i <= 10; i++) {
+                if (i == 3) {
+                    output += "[СТОП]";
+                    break;
+                }
+                output += i + " ";
+            }
+            document.getElementById('bcOutput').innerHTML = output;
+        }
+        
+        // continue
+        function showContinue() {
+            var output = "continue (пропуск 3 и 7): ";
+            for (var i = 1; i <= 10; i++) {
+                if (i == 3 || i == 7) {
+                    output += "[ПРОПУСК] ";
+                    continue;
+                }
+                output += i + " ";
+            }
+            document.getElementById('bcOutput').innerHTML = output;
+        }
+        
+        // return
+        function showReturn() {
+            var a = 5, b = 10;
+            var sum = getSum(a, b);
+            document.getElementById('returnOutput').innerHTML = 
+                "Сумма " + a + " + " + b + " = " + sum;
+        }
+        
+        function getSum(a, b) {
+            return a + b;
+        }
+        
+        // alert
+        function showAlert() {
+            alert("Это сигнальное окно!");
+            document.getElementById('dialogOutput').innerHTML = "alert показан";
+        }
+        
+        // confirm
+        function showConfirm() {
+            var result = confirm("Вы согласны?");
+            if (result) {
+                document.getElementById('dialogOutput').innerHTML = "Вы нажали OK";
+            } else {
+                document.getElementById('dialogOutput').innerHTML = "Вы нажали Отмена";
+            }
+        }
+        
+        // prompt
+        function showPrompt() {
+            var name = prompt("Введите ваше имя:", "Гость");
+            if (name != null && name != "") {
+                document.getElementById('dialogOutput').innerHTML = "Привет, " + name + "!";
+            } else if (name == "") {
+                document.getElementById('dialogOutput').innerHTML = "Вы не ввели имя";
+            } else {
+                document.getElementById('dialogOutput').innerHTML = "Вы нажали Отмена";
+            }
+        }
+    </script>
+    
+    <!-- СПОСОБ 3: Внешний JS файл -->
+    <script src="script.js"></script>
+</body>
+</html>

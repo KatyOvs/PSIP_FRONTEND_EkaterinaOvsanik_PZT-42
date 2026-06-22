@@ -1,0 +1,1683 @@
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #FFFFFF;
+  
+}
+
+/* ========== ШАПКА (Header) ========== */
+.header {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 100px;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  position: fixed;
+  z-index: 9999;
+}
+.hero {
+  padding-top: 100px;
+}
+.logo img {
+  width: 188px;
+  height: 80px;
+  display: block;
+}
+
+.nav-center {
+  display: flex;
+  gap: 48px;
+}
+
+.nav-center a {
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  transition: color 0.2s ease;
+}
+
+.nav-center a:hover {
+  color: #F28B00;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.phone:hover {
+  color: #F28B00;
+}
+
+.phone .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #F28B00;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.login:hover {
+  opacity: 0.8;
+}
+
+.login .icon {
+  width: 20px;
+  height: 20px;
+  color: #F28B00;
+}
+
+.lang {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  cursor: default;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #F5F5F5;
+  display: flex;
+  min-height: 1000px;
+}
+
+.hero-left {
+  flex: 1;
+  padding: 60px 0 60px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-nav {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.hero-nav a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #CCCCCC;
+  transition: color 0.2s ease;
+}
+
+.hero-nav a:first-child {
+  color: #000000;
+}
+
+.hero-nav a:hover {
+  color: #F28B00;
+}
+
+.content-block {
+  max-width: 609px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.title .orange {
+  color: #F28B00;
+}
+
+.title .black {
+  color: #000000;
+}
+
+.description {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.btn-details {
+  display: inline-block;
+  width: 161px;
+  height: 45px;
+  background-color: #F28B00;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 45px;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFF;
+  transition: background-color 0.2s ease;
+  margin-bottom: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-details:hover {
+  background-color: #d97a00;
+}
+
+.date-slider {
+  width: 553px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow-left,
+.arrow-right {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+  color: #888;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  opacity: 0.6;
+}
+
+.date {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 80px 60px 0;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  max-height: 825px;
+  object-fit: contain;
+}
+
+/* ========== НОВЫЙ БЛОК: Услуги ========== */
+.services-section {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #C7D9E7;
+  padding: 100px 0 200px 0;
+  position: relative;
+}
+
+.services-title {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  color: #000000;
+  margin-bottom: 80px;
+  letter-spacing: -0.02em;
+}
+
+.services-title .orange {
+  color: #F28B00;
+}
+
+.services-title .underline-orange {
+  text-decoration: underline;
+  text-decoration-color: #F28B00;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 4px;
+}
+
+.service-card {
+  width: 1362px;
+  max-width: 95%;
+  margin: 0 auto 100px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: inset 0 10px 24px rgba(255, 255, 255, 0.4);
+  min-height: 631px;
+}
+
+.service-card:last-child {
+  margin-bottom: 0;
+}
+
+.card-image {
+  flex: 0 0 auto;
+  width: 630px;
+  height: 631px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  flex: 1;
+  padding: 40px 50px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-headline {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 53px;
+  color: #000000;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.card-headline .orange {
+  color: #F28B00;
+}
+
+.card-text {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 0;
+}
+
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 232px;
+  height: 52px;
+  background-color: #F28B00;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-orange:hover {
+  background-color: #d97a00;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 232px;
+  height: 52px;
+  background: transparent;
+  border: 1.5px solid #000000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-outline:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* CROSS CARD   */
+.cross-card-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: -122px; 
+  margin-bottom: 0;
+}
+
+.cross-card {
+  width: 1600px;
+  max-width: 100%;
+  height: 244px;
+  background: linear-gradient(180deg, #C7D9E7 0%, #FFFFFF 100%);
+  border-radius: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+  box-shadow: inset 0 10px 24px rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.cross-label {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.cross-links {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.cross-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #000000;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 58px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.cross-link:hover {
+  color: #F28B00;
+}
+
+.cross-link img {
+  width: 77px;
+  height: 77px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.cross-link:last-child img {
+  width: 79px;
+  height: 78px;
+}
+
+/* тарифы */
+.tarif-section {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 200px 0 80px 0;
+  min-height: 200px;
+  z-index: 5;
+}
+
+.tarif-container {
+  max-width: 1362px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tarif-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 80px;
+  color: #000000;
+  margin-bottom: 60px;
+  line-height: 1.1;
+}
+
+.tarif-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 40px;
+  max-width: 1362px;
+  margin: 0 auto;
+}
+
+.tarif-card {
+  width: 100%;
+  max-width: 660px;
+  height: 350px;
+  background: linear-gradient(99deg, rgba(185, 202, 214, 0.2) 0%, rgba(232, 234, 238, 0.2) 100%);
+  border-radius: 10px;
+  padding: 40px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tarif-price {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.tarif-desc {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.tarif-desc-bold {
+  font-weight: 700;
+}
+
+.tarif-btn {
+  width: 232px;
+  height: 52px;
+  font-size: 24px;
+  font-weight: 400;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* ========== ПОДВАЛ ========== */
+.footer-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: -150px;
+  overflow: hidden;
+  padding-top: 30px;
+}
+
+.footer-wave {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0px;
+  z-index: 5;
+}
+
+.footer-content {
+  max-width: 1362px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  margin-top: -350px;
+}
+
+/* ----- Левая часть ----- */
+.footer-left {
+  flex: 0 0 auto;
+  max-width: 780px;
+  width: 100%;
+}
+
+.footer-top-links {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-top-links a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-top-links a:hover {
+  color: #F28B00;
+}
+
+.footer-link-with-icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 40px 60px;
+  margin-bottom: 30px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: #F28B00;
+}
+
+.footer-copyright {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.4;
+  max-width: 600px;
+}
+
+/* ----- Правая часть ----- */
+.footer-right {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 60px;
+}
+
+.footer-right-columns {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 40px;
+}
+
+.footer-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-right-col a {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.3;
+}
+
+.footer-right-col a:hover {
+  color: #F28B00;
+}
+
+.footer-resources {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.footer-resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.footer-resource-link:hover {
+  color: #F28B00;
+}
+
+.footer-resource-link img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ===== БУРГЕР-МЕНЮ (скрыто по умолчанию) ===== */
+#burgerToggle {
+  display: none;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 100;
+  padding: 5px;
+}
+
+.burger-menu span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background-color: #F5F5F5;
+  padding: 12px 16px;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 99;
+}
+
+#burgerToggle:checked ~ .mobile-nav {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-size: 14px;
+  padding: 6px 0;
+  text-decoration: none;
+  color: #000;
+  font-family: 'Ubuntu', sans-serif;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-phone {
+  color: #F28B00 !important;
+  font-weight: 500;
+}
+
+.mobile-login {
+  color: #F28B00 !important;
+}
+
+/* ========== АДАПТИВ ========== */
+
+/* ПЛАНШЕТЫ (768px - 1024px) */
+@media (max-width: 1024px) {
+  /* ----- ШАПКА ----- */
+  .header {
+    padding: 0 30px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .nav-center {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .nav-center a {
+    font-size: 16px;
+  }
+
+  .header-right {
+    gap: 18px;
+  }
+
+  .phone span,
+  .login span {
+    font-size: 16px;
+  }
+
+  .lang {
+    font-size: 16px;
+  }
+
+  /* ----- HERO ----- */
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero-left {
+    padding: 40px 30px 20px;
+  }
+
+  .hero-right {
+    padding: 0 30px 40px;
+  }
+
+  .hero-right img {
+    max-height: 500px;
+  }
+
+  .hero-nav {
+    flex-wrap: wrap;
+    gap: 16px 30px;
+    margin-bottom: 30px;
+  }
+
+  .hero-nav a {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .content-block {
+    max-width: 100%;
+  }
+
+  .date-slider {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ----- УСЛУГИ ----- */
+  .services-section {
+    padding: 60px 0 40px;
+  }
+
+  .services-title {
+    font-size: 44px;
+    margin-bottom: 50px;
+  }
+
+  .service-card {
+    width: 95%;
+    max-width: 630px;
+    flex-direction: column;
+    min-height: auto;
+    margin-bottom: 60px;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    max-height: 400px;
+  }
+
+  .card-image img {
+    object-fit: contain;
+  }
+
+  .card-content {
+    padding: 30px;
+  }
+
+  .card-headline {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .card-text {
+    font-size: 18px;
+  }
+
+  .card-buttons {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .btn-orange,
+  .btn-outline {
+    width: 100%;
+    max-width: 220px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  /* ----- CROSS CARD ----- */
+  .cross-card-wrapper {
+    margin-top: -60px;
+    padding: 0 20px;
+  }
+
+  .cross-card {
+    flex-direction: column;
+    padding: 30px 40px;
+    height: auto;
+    min-height: 200px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .cross-label {
+    font-size: 32px;
+  }
+
+  .cross-links {
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cross-link {
+    font-size: 28px;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .cross-link img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* ----- ТАРИФЫ ----- */
+  .tarif-section {
+    padding: 80px 0 60px;
+  }
+
+  .tarif-title {
+    font-size: 44px;
+    margin-bottom: 40px;
+  }
+
+  .tarif-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .tarif-card {
+    height: 300px;
+    padding: 30px 25px;
+  }
+
+  .tarif-price {
+    font-size: 28px;
+  }
+
+  .tarif-desc {
+    font-size: 16px;
+  }
+
+  .tarif-btn {
+    width: 100%;
+    max-width: 200px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  /* ----- ПОДВАЛ ----- */
+  .footer-wrapper {
+    background-color: #C7D9E7;
+    padding: 40px 0 30px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .footer-wave {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 30px;
+    margin-top: 0;
+    position: static;
+  }
+
+  .footer-left {
+    max-width: 100%;
+  }
+
+  .footer-top-links {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .footer-top-links a {
+    font-size: 18px;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 40px;
+  }
+
+  .footer-col-title {
+    font-size: 20px;
+  }
+
+  .footer-col a {
+    font-size: 18px;
+  }
+
+  .footer-right {
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .footer-right-columns {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer-right-col a {
+    font-size: 18px;
+  }
+
+  .footer-resources {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .footer-resource-link {
+    font-size: 18px;
+  }
+
+  .footer-resource-link img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ТЕЛЕФОНЫ (ДО 768px) */
+@media (max-width: 768px) {
+  /* ----- ШАПКА ----- */
+  .header {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 120px;
+    height: auto;
+  }
+
+  .nav-center {
+    gap: 14px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-center::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-center a {
+    font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .header-right {
+    gap: 12px;
+  }
+
+  .phone span {
+    display: none;
+  }
+
+  .phone .icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .login span {
+    display: none;
+  }
+
+  .login .icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .lang {
+    font-size: 14px;
+  }
+
+  /* ----- HERO ----- */
+  .hero-left {
+    padding: 24px 16px 16px;
+  }
+
+  .hero-right {
+    padding: 0 16px 24px;
+  }
+
+  .hero-right img {
+    max-height: 300px;
+  }
+
+  .hero-nav {
+    gap: 12px 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-nav a {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .btn-details {
+    width: 130px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .date-slider {
+    gap: 8px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+
+  .arrow-left svg,
+  .arrow-right svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ----- УСЛУГИ ----- */
+  .services-section {
+    padding: 40px 0 30px;
+  }
+
+  .services-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+    padding: 0 16px;
+  }
+
+  .services-title .underline-orange {
+    text-underline-offset: 4px;
+    text-decoration-thickness: 3px;
+  }
+
+  .service-card {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 40px;
+  }
+
+  .card-image {
+    aspect-ratio: 16/10;
+    max-height: 250px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-headline {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .card-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .btn-orange,
+  .btn-outline {
+    max-width: 100%;
+    width: 100%;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  /* ----- CROSS CARD ----- */
+  .cross-card-wrapper {
+    margin-top: -30px;
+    padding: 0 12px;
+  }
+
+  .cross-card {
+    padding: 20px 16px;
+    border-radius: 24px;
+    gap: 16px;
+    min-height: auto;
+  }
+
+  .cross-label {
+    font-size: 20px;
+  }
+
+  .cross-links {
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cross-link {
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .cross-link img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ----- ТАРИФЫ ----- */
+  .tarif-section {
+    padding: 50px 0 40px;
+  }
+
+  .tarif-container {
+    padding: 0 16px;
+  }
+
+  .tarif-title {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+
+  .tarif-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tarif-card {
+    height: auto;
+    min-height: 220px;
+    padding: 24px 20px;
+    border-radius: 10px;
+  }
+
+  .tarif-price {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .tarif-desc {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .tarif-btn {
+    max-width: 100%;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /* ----- ПОДВАЛ ----- */
+  .footer-wrapper {
+    background-color: #C7D9E7;
+    padding: 30px 0 20px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .footer-wave {
+    display: none;
+  }
+
+  .footer-content {
+    padding: 0 16px;
+    gap: 30px;
+    margin-top: 0;
+    position: static;
+  }
+
+  .footer-top-links {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-top-links a {
+    font-size: 16px;
+  }
+
+  .footer-top-links a img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+  }
+
+  .footer-col-title {
+    font-size: 16px;
+  }
+
+  .footer-col a {
+    font-size: 15px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  .footer-right {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .footer-right-columns {
+    gap: 24px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer-right-col a {
+    font-size: 16px;
+  }
+
+  .footer-resources {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-resource-link {
+    font-size: 16px;
+  }
+
+  .footer-resource-link img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* МАЛЕНЬКИЕ ТЕЛЕФОНЫ (ДО 480px) - БУРГЕР ПОЯВЛЯЕТСЯ */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 12px;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  .phone .icon,
+  .login .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .lang {
+    font-size: 12px;
+  }
+
+  .hero-left {
+    padding: 16px 12px 12px;
+  }
+
+  .hero-right {
+    padding: 0 12px 16px;
+  }
+
+  .hero-right img {
+    max-height: 200px;
+  }
+
+  .hero-nav {
+    gap: 8px 14px;
+    margin-bottom: 14px;
+  }
+
+  .hero-nav a {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .description {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  .btn-details {
+    width: 110px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+
+  .services-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+    padding: 0 12px;
+  }
+
+  .services-section {
+    padding: 30px 0 20px;
+  }
+
+  .service-card {
+    margin-bottom: 28px;
+  }
+
+  .card-image {
+    aspect-ratio: 16/9;
+    max-height: 180px;
+  }
+
+  .card-content {
+    padding: 16px;
+  }
+
+  .card-headline {
+    font-size: 18px;
+  }
+
+  .card-text {
+    font-size: 13px;
+  }
+
+  .btn-orange,
+  .btn-outline {
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .cross-card-wrapper {
+    margin-top: -20px;
+    padding: 0 8px;
+  }
+
+  .cross-card {
+    padding: 16px 12px;
+    border-radius: 16px;
+    gap: 12px;
+  }
+
+  .cross-label {
+    font-size: 16px;
+  }
+
+  .cross-link {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .cross-link img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .cross-links {
+    gap: 16px;
+  }
+
+  .tarif-section {
+    padding: 30px 0 30px;
+  }
+
+  .tarif-container {
+    padding: 0 12px;
+  }
+
+  .tarif-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .tarif-card {
+    padding: 18px 16px;
+    min-height: 180px;
+  }
+
+  .tarif-price {
+    font-size: 18px;
+  }
+
+  .tarif-desc {
+    font-size: 13px;
+  }
+
+  .tarif-btn {
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .footer-wrapper {
+    padding: 24px 0 16px;
+    padding-top: 0;
+  }
+
+  .footer-content {
+    padding: 0 12px;
+    gap: 24px;
+  }
+
+  .footer-top-links a {
+    font-size: 14px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .footer-col-title {
+    font-size: 14px;
+  }
+
+  .footer-col a {
+    font-size: 13px;
+  }
+
+  .footer-copyright {
+    font-size: 11px;
+  }
+
+  .footer-right-columns {
+    gap: 16px;
+  }
+
+  .footer-right-col a {
+    font-size: 14px;
+  }
+
+  .footer-resource-link {
+    font-size: 14px;
+  }
+
+  .footer-resource-link img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* ПОРТРЕТНЫЕ ТЕЛЕФОНЫ (ДО 380px) */
+@media (max-width: 380px) {
+  .logo img {
+    width: 80px;
+  }
+
+  .nav-center a {
+    font-size: 11px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .services-title {
+    font-size: 18px;
+  }
+
+  .card-headline {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 12px;
+  }
+
+  .btn-orange,
+  .btn-outline {
+    height: 34px;
+    font-size: 13px;
+  }
+
+  .tarif-price {
+    font-size: 16px;
+  }
+
+  .tarif-desc {
+    font-size: 12px;
+  }
+
+  .cross-label {
+    font-size: 14px;
+  }
+
+  .cross-link {
+    font-size: 12px;
+  }
+
+  .cross-link img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-col a {
+    font-size: 12px;
+  }
+}
