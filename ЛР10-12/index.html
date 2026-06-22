@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Вариант №5 - Овсяник Екатерина</title>
+
+    <!-- ЗАДАНИЕ 1 -->
+    <script>
+        function showCurrentHour() {
+            const now = new Date();
+            const hours = now.getHours();
+            alert("Текущий час: " + hours);
+        }
+    </script>
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h2>Вариант №5 – Овсяник Екатерина</h2>
+
+    <!--  ЗАДАНИЕ 1 -->
+    <button onclick="showCurrentHour()">Показать час</button>
+    <hr>
+
+    <!--  ЗАДАНИЕ 2  -->
+    <script>
+        const n = 5;
+        const name = "Екатерина Овсяник";
+        for (let i = 0; i < n + 5; i++) {
+            document.write(name + "<br>");
+        }
+    </script>
+    <hr>
+
+    <!--  ЗАДАНИЕ 3  -->
+    <script>
+        const arr = [3, 8, 5, 12, 7, 4, 9, 6]; 
+        let product = 1;
+        let hasOdd = false;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 !== 0) {
+                product *= arr[i];
+                hasOdd = true;
+            }
+        }
+
+        document.write("Массив: " + arr.join(", ") + "<br>");
+        if (hasOdd) {
+            document.write("Произведение нечетных элементов: " + product);
+        } else {
+            document.write("Нечетных элементов нет.");
+        }
+    </script>
+    <hr>
+
+    <!--  ЗАДАНИЕ 4  -->
+    <div id="mathResult"></div>
+    <hr>
+
+    <!-- ЗАДАНИЕ 5  -->
+    <script>
+        const S1 = "Овсяник";
+        const S2 = "Cоветских Пограничников 2";
+
+        // 1. Длина S2
+        const lenS2 = S2.length;
+        document.write("Длина строки S2 (АДРЕС): " + lenS2 + "<br>");
+
+        // 2. Сцепление
+        const concatenated = S1 + S2;
+        document.write("Сцепление S1 и S2: " + concatenated + "<br>");
+
+        // 3. Нижний регистр S2
+        const lowerS2 = S2.toLowerCase();
+        document.write("S2 в нижнем регистре: " + lowerS2 + "<br>");
+    </script>
+    <hr>
+
+    <!-- ЗАДАНИЕ 6 -->
+    <script>
+        // Глубина цвета (бит на пиксель)
+        const bitDepth = window.screen.colorDepth;
+
+        // Открываем новое окно 800x600 без полосы прокрутки
+        const newWin = window.open(
+            "",
+            "_blank",
+            "width=800,height=600,scrollbars=no"
+        );
+
+        if (newWin) {
+            newWin.document.write(`
+                <h3>Информация о глубине цвета</h3>
+                <p>Количество бит на пиксель (глубина цвета): <strong>${bitDepth}</strong></p>
+                <p><button onclick="window.close()">Закрыть окно</button></p>
+            `);
+        } else {
+            alert("Разрешите всплывающие окна для этого сайта.");
+        }
+    </script>
+
+</body>
+</html>
