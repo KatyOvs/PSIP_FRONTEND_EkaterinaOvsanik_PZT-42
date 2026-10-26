@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 13 - Карточка товара (Grid версия)</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+    <div class="card">
+        <!-- Левая часть: картинка -->
+        <div class="card-image">
+            <div class="badge">Рассрочка 6 мес.</div>
+            <img src="img/fridge.png" alt="Холодильник BOSCH">
+        </div>
+
+        <!-- Правая часть -->
+        <div class="card-info">
+            <!-- Левая колонка: название, рейтинг, характеристики -->
+            <div class="info-left">
+                <div class="title-section">
+                    <h3 class="product-title">Холодильник BOSCH</h3>
+                    <div class="availability">
+                        ✓ в наличии
+                    </div>
+                </div>
+
+                <div class="rating">
+                    <div class="stars">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <span class="rating-count">(6)</span>
+                </div>
+
+                <div class="specs">
+                    <p><strong>Конструкция:</strong> с нижней морозильной камерой</p>
+                    <p><strong>Исполнение:</strong> свободностоящее</p>
+                    <p><strong>Система охлаждения:</strong> No Frost</p>
+                </div>
+            </div>
+
+            <!-- Правая колонка: цена, баллы, переключатель, кнопка -->
+            <div class="info-right">
+                <div class="price">Цена: 4716,36 руб.</div>
+                <div class="points">94,33 балла на счет</div>
+                <div class="actions">
+                    <label class="compare-switch">
+                        Сравнить:
+                        <input type="checkbox" class="switch-input">
+                        <span class="switch-slider"></span>
+                    </label>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

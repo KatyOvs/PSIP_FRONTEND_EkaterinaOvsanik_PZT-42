@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Каталог товаров</h1>
+    <div class="card">
+        <h2>Фильтры (из URL)</h2>
+        <p>Категория: <b id="f-category"></b></p>
+        <p>Сортировка: <b id="f-sort"></b></p>
+        <p>Страница: <b id="f-page"></b></p>
+    </div>
+    <div class="card">
+        <h2>Товары</h2>
+        <ul id="products"></ul>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("f-category").textContent = params.get("category") || "all";
+        document.getElementById("f-sort").textContent = params.get("sort") || "default";
+        document.getElementById("f-page").textContent = params.get("page") || "1";
+
+        const db = {
+            phones: ["iPhone 15", "Samsung Galaxy S24", "Xiaomi 14"],
+            laptops: ["MacBook Air", "Lenovo ThinkPad", "Asus ZenBook"],
+            all: ["iPhone 15", "MacBook Air", "Samsung Galaxy S24", "Lenovo ThinkPad"]
+        };
+        const list = document.getElementById("products");
+        (db[params.get("category")] || db.all).forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>

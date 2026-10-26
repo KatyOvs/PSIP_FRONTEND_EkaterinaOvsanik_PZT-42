@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 13 - Форма заказа</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="form-container">
+        <!-- Оранжевая шапка -->
+        <div class="form-header">
+            <span class="form-title">ЗАКАЗАТЬ</span>
+            <button class="close-btn" type="button">✕</button>
+        </div>
+
+        <!-- Белая форма -->
+        <div class="form-body">
+            <!-- Информация о товаре -->
+            <div class="product-info">
+                <div class="product-title">Блендер</div>
+                <div class="product-price">Стоимость: 1000 р</div>
+            </div>
+
+            <!-- Поля формы -->
+            <form action="#" method="post" class="order-form">
+                <!-- Цвет (выпадающий список) -->
+                <div class="form-field">
+                    <label for="color">Цвет</label>
+                    <select id="color" name="color">
+                        <option value="Красный" disabled selected>Красный</option>
+                        <option value="белый">Белый</option>
+                        <option value="черный">Черный</option>
+                        <option value="синий">Синий</option>
+                    </select>
+                </div>
+
+                <!-- Ваше имя -->
+                <div class="form-field">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Ваше имя">
+                </div>
+
+                <!-- Email (обязательный) -->
+                <div class="form-field">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" placeholder="Email*" required>
+                   
+                </div>
+
+                <!-- Телефон (обязательный) -->
+                <div class="form-field">
+                    <label for="phone">Телефон*</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Телефон*" required>
+                  
+                </div>
+
+                <!-- Чекбокс c условиями -->
+                <div class="checkbox-field">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="agreement" required>
+                        <span class="checkbox-text">
+                            я принимаю условия 
+                            <a href="#" class="orange-link">политики обработки данных</a>
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Кнопка оформления -->
+                <button type="submit" class="submit-btn">Оформить заявку</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ВНУТРЕННЯЯ ТАБЛИЦА СТИЛЕЙ (способ 2) -->
+    <style>
+        /* Этот блок демонстрирует внутреннюю таблицу стилей */
+        .demo-internal {
+            background-color: #f6e4ff;
+            padding: 5px 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+        }
+    </style>
+    
+    <title>Vivienne Westwood</title>
+    <link rel="icon" href="img/vestwoodicon.png">
+    <meta name="description" content="Ключевые элементы наследия Vivienne Westwood: официальный ресурс, символы, хронология коллекций, медиа и обратная связь.">
+    <meta name="keywords" content="Vivienne Westwood, архив, Orb, коллекции, показы, панк-эстетика, форма для связи">
+    <meta name="author" content="Vivienne Westwood Estate">
+</head>
+<body>
+    <!-- Внутритеговой стиль (способ 3) для демонстрации -->
+    <h1 style="letter-spacing: 2px; text-shadow: 2px 2px 4px #c290ba;">Vivienne Westwood</h1>
+
+    <!-- 1. Ссылки с графикой (уже есть) -->
+    <div class="section">
+        <h2>1. Ресурсы бренда</h2>
+        <div class="link-block">
+            <a href="https://www.viviennewestwood.com/" class="logo-link">
+                <img src="img/Vivienne-Westwood-Emblem.png" alt="Логотип Orb" class="logo-img">
+                <span>Главный сайт · Vivienne Westwood</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 2. Графика — акцент на символах (уже есть) -->
+    <div class="section">
+        <h2>2. Эстетика бренда</h2>
+        <div class="gallery">
+            <img src="img/WW.jpg" alt="Классическое платье с корсетом" class="fixed-img">
+            <svg width="50" height="50" class="svg-icon" aria-label="Иконка сердца">
+                <circle cx="25" cy="25" r="20" fill="#c290ba" stroke="#755c8c" stroke-width="2"/>
+                <text x="15" y="32" fill="white" font-size="22" font-family="Arial">♥</text>
+            </svg>
+        </div>
+    </div>
+
+    
+    <!-- текст  -->
+    <div class="section demo-internal">
+        <h2>3.1 Оформление текста</h2>
+        <p><span class="bold">Жирный текст</span> · <span class="italic">Курсив</span> · <span class="line-through">Зачеркнутый</span> · <span class="underline">Подчеркнутый</span></p>
+    </div>
+
+    <!-- 3. Списки  -->
+    <div class="section">
+        <h2>3. Код Дома</h2>
+        <div class="lists-container">
+            <ul>
+                <li>Корсеты (вне времени)</li>
+                <li>Туфли на платформе</li>
+                <li>Принт «клетка»</li>
+            </ul>
+            
+            <ol>
+                <li>1970-е: панк-зарождение</li>
+                <li>1980-е: New Romantic</li>
+                <li>1990-е: анти-мода</li>
+            </ol>
+        </div>
+    </div>
+
+    
+
+    <!-- 4. Таблицы  -->
+    <div class="section">
+        <h2 id="collections-title">4. Ключевые коллекции</h2>
+        <div class="tables-container">
+            <table>
+                <tr>
+                    <th>Год</th>
+                    <th>Коллекция</th>
+                </tr>
+                <tr>
+                    <td>1981</td>
+                    <td>Pirates</td>
+                </tr>
+                <tr>
+                    <td>1993</td>
+                    <td>Anglomania</td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td rowspan="2">Vivienne</td>
+                    <td>дизайнер</td>
+                </tr>
+                <tr>
+                    <td>активистка</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 5. Аудио/Видео (уже есть) -->
+    <div class="section">
+        <h2>5. Медиа-фрагменты</h2>
+        <div class="media-container">
+            <audio controls src="audio/music.mp3" style="width:100%; max-width:250px;"></audio>
+            <video controls width="300" src="video/The-Vivienne-Westwood-Bridal-Collection.mp4" class="fixed-video"></video>
+        </div>
+    </div>
+
+    
+
+    <!-- Форма (уже есть) -->
+    <div class="section">
+        <h2>Обратная связь</h2>
+        <form>
+            <div class="form-group">
+                <label>Имя:</label>
+                <input type="text" placeholder="как к вам обращаться">
+            </div>
+            
+            <div class="form-group">
+                <label>Возраст:</label>
+                <input type="number" min="1" max="120" step="1" value="25">
+            </div>
+            
+            <div class="form-group">
+                <label>Пол (для статистики):</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender"> жен.</label>
+                    <label><input type="radio" name="gender"> муж.</label>
+                    <label><input type="radio" name="gender"> иной</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Любимая декада:</label>
+                <select>
+                    <option>1970s панк</option>
+                    <option>1980s буфанты</option>
+                    <option>1990s деконструкция</option>
+                    <option>2000s+ Orb</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Что ближе:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox"> одежда</label>
+                    <label><input type="checkbox"> обувь</label>
+                    <label><input type="checkbox"> украшения</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Ваш комментарий:</label>
+                <textarea rows="2" cols="30" placeholder="впечатления или вопрос"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Email для ответа:</label>
+                <input type="email" placeholder="name@domain.com">
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn-primary">отправить</button>
+                <button type="reset" class="btn-secondary">сбросить</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 7. АНИМАЦИЯ (уже есть) -->
+    <div class="animate">Наведи</div>
+    <div class="bounce">Прыгает</div>
+
+    
+
+    <!-- Футер с inline-стилями (уже есть) -->
+    <footer style="border-top-color: #7e4b85; font-size: 0.9em;">
+        Vivienne Westwood · неофициальный архив · 2026
+    </footer>
+</body>
+</html>

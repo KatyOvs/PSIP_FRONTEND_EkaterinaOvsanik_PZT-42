@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница истории №2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Страница истории №2</h1>
+    <p>Записей в истории: <span id="len"></span></p>
+    <button onclick="history.back()">← Назад</button>
+    <button onclick="history.forward()">Вперёд →</button>
+    <button onclick="location.href='index.html'">На главную</button>
+    <script>
+        document.getElementById("len").textContent = history.length;
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+/* Обнуление стандартных отступов и границ у всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Стили для фона страницы и центрирования карточки */
+body {
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* КАРТОЧКА ТОВАРА*/
+.card {
+    display: grid;
+    grid-template-columns: auto 1fr;  
+    background: white;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: start;
+}
+
+/* Бейдж "рассрочка" */
+.badge {
+    background: linear-gradient(90deg, #ffcc00, #ffffff);
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* Контейнер для изображения: сохраняем вертикальное расположение */
+.card-image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Изображение товара: фиксированная ширина, автоматическая высота */
+.card-image img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+/* Правая часть карточки (общий контейнер для двух колонок: текст и цена/кнопки) */
+.card-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;   /* левая колонка (характеристики) в 2 раза шире правой (цена/кнопки) */
+    gap: 20px;
+    align-items: center;
+}
+
+/* Левая колонка: название, рейтинг, характеристики */
+.info-left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Название товара */
+.product-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Статус наличия */
+.availability {
+    font-size: 13px;
+    color: #999;
+}
+
+/* Блок рейтинга */
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Контейнер звезд */
+.stars {
+    display: flex;
+    gap: 3px;
+}
+
+/* Неактивная звезда (серая) */
+.star {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Активная звезда (желтая) */
+.star.filled {
+    color: #ffcc00;
+}
+
+/* Количество отзывов */
+.rating-count {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Характеристики товара */
+.specs {
+    text-align: left;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Правая колонка: цена, баллы, переключатель и кнопка — вертикальный флекс */
+.info-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* Цена товара */
+.price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    text-align: right;
+}
+
+/* Блок с баллами: светло-фиолетовый фон */
+.points {
+    background: #e8d5ff;
+    padding: 4px 8px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+/* Контейнер для переключателя и кнопки */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+/* Переключатель "Сравнить" */
+.compare-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Скрываем стандартный чекбокс */
+.switch-input {
+    display: none;
+}
+
+/* Стили для кастомного переключателя */
+.switch-slider {
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Круглая ручка переключателя */
+.switch-slider::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    transition: 0.3s;
+}
+
+/* Активное состояние переключателя (включен) */
+.switch-input:checked + .switch-slider {
+    background: #ff8c00;
+}
+
+/* Ручка активного переключателя */
+.switch-input:checked + .switch-slider::before {
+    left: 21px;
+}
+
+/* Кнопка "Купить" с градиентом и скругленными углами */
+.buy-btn {
+    background: linear-gradient(135deg, #ff8c00, #ffaa00);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Эффект при наведении на кнопку */
+.buy-btn:hover {
+    opacity: 0.9;
+}

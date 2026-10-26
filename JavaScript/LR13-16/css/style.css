@@ -1,0 +1,244 @@
+* { box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    margin: 0;
+    padding: 20px;
+}
+h1 { color: #2c3e50; }
+.card {
+    background: #fff;
+   
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.card h2 { margin-top: 0; color: #1a73e8; }
+button {
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    margin: 4px 6px 4px 0;
+    border-radius:3px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover { background: #155ab6; }
+#timer {
+    position: sticky;
+    top: 0;
+    background: #1a73e8;
+    color: #fff;
+    font-weight: bold;
+    z-index: 10;
+}
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
+th { background: #eef2fb; }
+.badge {
+    padding: 3px 10px;
+    /*border-radius: 12px;*/
+    background: #1a73e8;
+    color: #fff;
+    font-size: 0.85em;
+}
+.badge.warn { background: #e67e22; }
+.badge.mobile { background: #27ae60; }
+#dom-container {
+    border: 2px dashed #1a73e8;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+#dom-container .new-block {
+    background: #eef2fb;
+    padding: 8px 12px;
+    margin: 6px 0;
+    border-left: 4px solid #1a73e8;
+    border-radius: 4px;
+}
+#dom-style {
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+#dom-tree-output {
+    background: #f4f6fa;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    white-space: pre-wrap;
+}
+ .event-log {
+            background: #0f172a;
+            color: #d1fae5;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.85em;
+            padding: 10px 14px;
+            border-radius: 6px;
+            height: 140px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            margin-top: 8px;
+        }
+        .event-log .ts { color: #64748b; }
+        .event-log .ev { color: #38bdf8; font-weight: bold; }
+        .event-log .dt { color: #fbbf24; }
+
+        #mouse-zone {
+            position: relative;
+            height: 180px;
+            background: linear-gradient(135deg, #eef2fb, #dbe7ff);
+            border: 2px dashed #1a73e8;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a73e8;
+            font-weight: bold;
+            user-select: none;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+        #mouse-zone .coords {
+            position: absolute;
+            background: rgba(26,115,232,0.9);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-family: monospace;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            display: none;
+            white-space: nowrap;
+        }
+        #mouse-zone .ripple {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(26,115,232,0.4);
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s ease-out forwards;
+            pointer-events: none;
+        }
+        @keyframes ripple {
+            to { width: 120px; height: 120px; opacity: 0; }
+        }
+
+        .kbd-box {
+            padding: 12px;
+            border: 2px solid #1a73e8;
+            border-radius: 8px;
+            background: #fff;
+            text-align: center;
+            min-height: 60px;
+            font-size: 1.1em;
+            outline: none;
+        }
+        .kbd-box:focus {
+            box-shadow: 0 0 0 4px rgba(26,115,232,0.2);
+        }
+
+        .dnd-area {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .dnd-source, .dnd-target {
+            padding: 16px;
+            border-radius: 8px;
+            min-height: 90px;
+            min-width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .dnd-source {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            cursor: grab;
+            color: #92400e;
+        }
+        .dnd-source:active { cursor: grabbing; }
+        .dnd-target {
+            background: #dcfce7;
+            border: 2px dashed #22c55e;
+            color: #166534;
+            flex: 1;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .dnd-target.dragover {
+            background: #bbf7d0;
+            transform: scale(1.02);
+            border-style: solid;
+        }
+
+        .scroll-box {
+            height: 160px;
+            overflow-y: auto;
+            border: 2px solid #1a73e8;
+            border-radius: 8px;
+            padding: 10px;
+            background: #f8fafc;
+        }
+        .scroll-box p { margin: 4px 0; }
+
+        .progress-wrap {
+            height: 14px;
+            background: #e2e8f0;
+            border-radius: 7px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #1a73e8, #38bdf8);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        .touch-area {
+            height: 140px;
+            background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+            border: 2px solid #8b5cf6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6d28d9;
+            font-weight: bold;
+            user-select: none;
+            touch-action: none;
+            position: relative;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+        .touch-dot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(139,92,246,0.35);
+            border: 2px solid #8b5cf6;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .timer-display {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #1a73e8;
+            text-align: center;
+            font-family: Consolas, monospace;
+        }
+        .timer-btn-group button { margin: 4px 6px 4px 0; }
+
+        .props-table td:first-child {
+            font-family: monospace;
+            color: #1a73e8;
+        }

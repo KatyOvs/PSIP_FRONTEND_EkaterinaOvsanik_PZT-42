@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 13 - Адаптивный макет</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="card.css">
+   
+</head>
+<body>
+    <div class="adaptive-container">
+        <!-- ШАПКА -->
+        <header class="block header">
+            <div class="logo">
+                <img src="img/logo.png" alt="Логотип" class="logo-img">
+            </div>
+            
+            <input type="checkbox" id="burger" class="burger-checkbox">
+            <label for="burger" class="burger-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <nav class="horizontal-menu">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Портфолио</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main-grid">
+            <!-- Левая колонка -->
+            <div class="left-col">
+                <div class="block block-1">Блок 1</div>
+                <div class="block block-2">Блок 2</div>
+                <div class="block block-3">Блок 3</div>
+            </div>
+
+            <!-- Центральная колонка  -->
+            <div class="center-col">
+                <div class="block block-4">
+                    <!-- ФОРМА  -->
+                    <div class="form-container">
+                        <div class="form-header">
+                            <span class="form-title">ЗАКАЗАТЬ</span>
+                            <button class="close-btn" type="button">✕</button>
+                        </div>
+                        <div class="form-body">
+                            <div class="product-info">
+                                <div class="product-title">Блендер</div>
+                                <div class="product-price">Стоимость: 1000 р</div>
+                            </div>
+                            <form action="#" method="post" class="order-form">
+                                <div class="form-field">
+                                    <label for="color">Цвет</label>
+                                    <select id="color" name="color">
+                                        <option value="Красный" disabled selected>Красный</option>
+                                        <option value="белый">Белый</option>
+                                        <option value="черный">Черный</option>
+                                        <option value="синий">Синий</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="name">Ваше имя</label>
+                                    <input type="text" id="name" name="name" placeholder="Ваше имя">
+                                </div>
+                                <div class="form-field">
+                                    <label for="email">Email*</label>
+                                    <input type="email" id="email" name="email" placeholder="Email*" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="phone">Телефон*</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Телефон*" required>
+                                </div>
+                                <div class="checkbox-field">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="agreement" required>
+                                        <span class="checkbox-text">
+                                            я принимаю условия 
+                                            <a href="#" class="orange-link">политики обработки данных</a>
+                                        </span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="submit-btn">Оформить заявку</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- КАРТОЧКА ТОВАРА  -->
+                    <div class="card">
+                        <div class="card-image">
+                            <div class="badge">Рассрочка 6 мес.</div>
+                            <img src="img/fridge.png" alt="Холодильник BOSCH">
+                        </div>
+                        <div class="card-info">
+                            <div class="info-left">
+                                <div class="title-section">
+                                    <h3 class="product-title">Холодильник BOSCH</h3>
+                                    <div class="availability">✓ в наличии</div>
+                                </div>
+                                <div class="rating">
+                                    <div class="stars">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-count">(6)</span>
+                                </div>
+                                <div class="specs">
+                                    <p><strong>Конструкция:</strong> с нижней морозильной камерой</p>
+                                    <p><strong>Исполнение:</strong> свободностоящее</p>
+                                    <p><strong>Система охлаждения:</strong> No Frost</p>
+                                </div>
+                            </div>
+                            <div class="info-right">
+                                <div class="price">Цена: 4716,36 руб.</div>
+                                <div class="points">94,33 балла на счет</div>
+                                <div class="actions">
+                                    <label class="compare-switch">
+                                        Сравнить:
+                                        <input type="checkbox" class="switch-input">
+                                        <span class="switch-slider"></span>
+                                    </label>
+                                    <button class="buy-btn">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка -->
+            <div class="right-col">
+                <div class="block block-5">Блок 5</div>
+                <div class="block block-6">Блок 6</div>
+            </div>
+        </div>
+
+        <footer class="block footer">
+            <div class="copyright">© 2026 Вариант 13</div>
+            <div class="social-links">
+                <a href="https://t.me/myukle" target="_blank">Telegram</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

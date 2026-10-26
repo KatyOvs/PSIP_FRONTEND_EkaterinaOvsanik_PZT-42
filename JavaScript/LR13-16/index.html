@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Lab — Объектная модель браузера</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <noscript>Включите JavaScript!</noscript>
+
+    <h1>Лабораторная работа 13: BOM в JavaScript</h1>
+
+    <div id="timer" class="card">Вы на странице: 0 сек</div>
+
+    <!-- WINDOW  -->
+    <section class="card">
+        <h2>1. WINDOW — управление окнами и таймеры</h2>
+        <p>Ширина окна: <span id="win-width"></span> px</p>
+        <p>Высота окна: <span id="win-height"></span> px</p>
+        <p>Открыто дочерних окон: <span id="popup-count">0</span></p>
+
+        <button onclick="openChildWindow()">Открыть дочернее окно</button>
+        <button onclick="closeChildWindow()">Закрыть дочернее окно</button>
+        <button onclick="sendMessageToChild()">Отправить сообщение в дочернее окно</button>
+        <button onclick="scrollTopPage()">Наверх страницы</button>
+        <button onclick="scrollBottomPage()">Вниз страницы</button>
+    </section>
+
+    <!-- LOCATION  -->
+    <section class="card">
+        <h2>2. LOCATION — навигация и параметры URL</h2>
+        <p>Полный URL: <span id="loc-href"></span></p>
+        <p>Протокол: <span id="loc-protocol"></span></p>
+        <p>Хост: <span id="loc-host"></span></p>
+        <p>Путь: <span id="loc-path"></span></p>
+        <p>Параметры (GET): <span id="loc-search"></span></p>
+        <p>Хэш: <span id="loc-hash"></span></p>
+
+        <button onclick="goToCatalog()">Перейти в каталог с фильтром</button>
+        <button onclick="reloadPage()">Перезагрузить страницу</button>
+        <button onclick="replaceHash()">Установить #section1 в URL</button>
+    </section>
+
+    <!--  NAVIGATOR  -->
+    <section class="card">
+        <h2>3. NAVIGATOR — информация о браузере и системе</h2>
+        <p>User Agent: <span id="nav-ua"></span></p>
+        <p>Язык: <span id="nav-lang"></span></p>
+        <p>Платформа: <span id="nav-platform"></span></p>
+        <p>Cookies включены: <span id="nav-cookie"></span></p>
+        <p>Онлайн: <span id="nav-online"></span></p>
+        <p>Ядер: <span id="nav-cores"></span></p>
+        <p>Тип устройства: <span id="device-type" class="badge"></span></p>
+    </section>
+
+    <!--  HISTORY  -->
+    <section class="card">
+        <h2>4. HISTORY — навигация по истории</h2>
+        <p>Записей в истории: <span id="hist-length"></span></p>
+        <button onclick="goBack()">Назад</button>
+        <button onclick="goForward()">Вперёд</button>
+        <button onclick="goToHistoryPage()">Страница истории №2</button>
+    </section>
+
+    <!-- SCREEN  -->
+    <section class="card">
+        <h2>5. SCREEN — параметры экрана</h2>
+        <table id="screen-table">
+            <thead>
+                <tr><th>Параметр</th><th>Значение</th></tr>
+            </thead>
+            <tbody id="screen-tbody"></tbody>
+        </table>
+    </section>
+    
+<!--  DOM  -->
+<section class="card">
+   <h1>Лабораторная работа 14: DOM в JavaScript</h1>
+
+    <p id="dom-text">Этот текст можно изменить через DOM.</p>
+    <button onclick="changeDomText()">1. Изменить текст</button>
+
+    <div id="dom-container">
+        <p>Существующий блок</p>
+    </div>
+    <button onclick="addDomBlock()">2. Добавить новый блок</button>
+
+    <ul id="dom-list">
+        <li>Элемент 1</li>
+        <li>Элемент 2</li>
+        <li>Элемент 3</li>
+    </ul>
+    <button onclick="removeDomElement()">3. Удалить последний элемент</button>
+
+    <p id="dom-style">Этот блок меняет стиль по клику.</p>
+    <button onclick="changeDomStyle()">4. Изменить стиль</button>
+
+    <p>Кликните по кнопке — счётчик покажет реакцию на событие:</p>
+    <button id="dom-event-btn">5. Нажми меня</button>
+    <p>Нажатий: <span id="dom-click-count">0</span></p>
+    <hr>
+</section>
+   <!-- DOCUMENT -->
+<section class="card">
+    <h2>6. DOCUMENT — информация о документе</h2>
+
+    <p>Название (title): <span id="doc-title"></span></p>
+    <p>Адрес (URL): <span id="doc-url"></span></p>
+    <p>Расположение (location): <span id="doc-location"></span></p>
+    <p>Домен: <span id="doc-domain"></span></p>
+    <p>Кодировка: <span id="doc-charset"></span></p>
+    <p>Ширина документа: <span id="doc-width"></span> px</p>
+    <p>Высота документа: <span id="doc-height"></span> px</p>
+
+    <p>Всего элементов на странице: <span id="doc-elements"></span></p>
+    <p>Кнопок: <span id="doc-buttons"></span></p>
+    <p>Ссылок: <span id="doc-links"></span></p>
+
+    <button onclick="updateDocumentInfo()">Обновить</button>
+</section>
+<!-- Ссылка на лабораторную работу №15 -->
+<section class="card" style="text-align:center;">
+    <h2>Лабораторная работа 15</h2>
+    <a href="lab15.html" class="lab-link">Открыть лабораторную работу №15 (События)</a>
+</section>
+<!-- Ссылка на лабораторную работу №16 -->
+<section class="card" style="text-align:center;">
+    <h2>Лабораторная работа 16</h2>
+    <a href="lab16.html" class="lab-link">Открыть лабораторную работу №16</a>
+</section>
+    <script src="js/script.js"></script>
+</body>
+</html>

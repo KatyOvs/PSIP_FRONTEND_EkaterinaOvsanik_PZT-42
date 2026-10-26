@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 15 — Обработка событий в JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <noscript>Включите JavaScript!</noscript>
+
+    <h1>Лабораторная работа 15: Обработка событий в JavaScript</h1>
+    <p><a href="index.html">Вернуться на главную</a></p>
+
+    <!-- ============ 1. СОБЫТИЯ МЫШИ ============ -->
+    <section class="card">
+        <h2>1. События мыши</h2>
+        <p>Наведите, кликните, нажмите и отпустите кнопку в области ниже.
+           Отслеживаются: <code>mousedown</code>, <code>mouseup</code>, <code>click</code>,
+           <code>dblclick</code>, <code>mousemove</code>, <code>mouseover</code>, <code>mouseout</code>,
+           <code>contextmenu</code>.</p>
+
+        <div id="mouse-zone">
+            Область для событий мыши
+            <div class="coords" id="mouse-coords"></div>
+        </div>
+    </section>
+
+    <!-- ============ 2. СОБЫТИЯ КЛАВИАТУРЫ ============ -->
+    <section class="card">
+        <h2>2. События клавиатуры</h2>
+        <p>Кликните в поле ниже и нажмите любую клавишу. Отслеживаются
+           <code>keydown</code>, <code>keyup</code>, <code>keypress</code>.</p>
+
+        <div class="kbd-box" id="kbd-box" tabindex="0">
+            Нажмите здесь и введите текст…
+        </div>
+        <p style="margin-top:10px;">Последняя клавиша: <b id="kbd-last">—</b></p>
+        <p>Нажато клавиш (keydown): <b id="kbd-count">0</b></p>
+    </section>
+
+    <!-- ============ 3. DRAG & DROP ============ -->
+    <section class="card">
+        <h2>3. Drag &amp; Drop события</h2>
+        <p>Перетащите карточку слева в зону справа. Отслеживаются
+           <code>dragstart</code>, <code>drag</code>, <code>dragend</code>,
+           <code>dragenter</code>, <code>dragover</code>, <code>dragleave</code>, <code>drop</code>.</p>
+
+        <div class="dnd-area">
+            <div class="dnd-source" id="dnd-source" draggable="true">
+                Перетащи меня
+            </div>
+            <div class="dnd-target" id="dnd-target">
+                Зона приёма
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 4. СОБЫТИЯ УКАЗАТЕЛЯ ============ -->
+    <section class="card">
+        <h2>4. События указателя (Pointer Events)</h2>
+        <p>Универсальные события для мыши, пера и касания. Отслеживаются
+           <code>pointerdown</code>, <code>pointerup</code>, <code>pointermove</code>,
+           <code>pointerover</code>, <code>pointerout</code>, <code>pointerenter</code>,
+           <code>pointerleave</code>, <code>pointercancel</code>.</p>
+
+        <div id="pointer-zone" style="height:160px;background:linear-gradient(135deg,#fef3c7,#fde68a);
+             border:2px solid #f59e0b;border-radius:8px;display:flex;align-items:center;
+             justify-content:center;color:#92400e;font-weight:bold;user-select:none;touch-action:none;">
+            Область Pointer Events
+        </div>
+        <p style="margin-top:10px;">Тип указателя: <b id="pointer-type">—</b></p>
+        <p>Последнее событие: <b id="pointer-last">—</b></p>
+    </section>
+
+    <!-- ============ 5. СОБЫТИЯ ПРОКРУТКИ ============ -->
+    <section class="card">
+        <h2>5. События полосы прокрутки</h2>
+        <p>Прокручивайте блок ниже. Отслеживается <code>scroll</code>, прогресс прокрутки
+           и событие <code>wheel</code> (прокрутка колёсиком).</p>
+
+        <div class="scroll-box" id="scroll-box">
+            <p>Строка 1</p><p>Строка 2</p><p>Строка 3</p><p>Строка 4</p>
+            <p>Строка 5</p><p>Строка 6</p><p>Строка 7</p><p>Строка 8</p>
+            <p>Строка 9</p><p>Строка 10</p><p>Строка 11</p><p>Строка 12</p>
+            <p>Строка 13</p><p>Строка 14</p><p>Строка 15</p><p>Строка 16</p>
+            <p>Строка 17</p><p>Строка 18</p><p>Строка 19</p><p>Строка 20</p>
+        </div>
+        <div class="progress-wrap"><div class="progress-bar" id="scroll-progress"></div></div>
+        <p>Прогресс прокрутки: <b id="scroll-percent">0%</b></p>
+    </section>
+
+    <!-- ============ 6. СЕНСОРНЫЕ СОБЫТИЯ ============ -->
+    <section class="card">
+        <h2>6. События сенсорных экранов</h2>
+        <p>Коснитесь области (на телефоне/планшете) или кликните мышью.
+           Отслеживаются <code>touchstart</code>, <code>touchmove</code>, <code>touchend</code>,
+           <code>touchcancel</code>. На устройствах без touch — используйте эмуляцию в DevTools.</p>
+
+        <div class="touch-area" id="touch-area">
+            Коснитесь этой области
+        </div>
+        <p style="margin-top:10px;">Касаний сейчас: <b id="touch-count">0</b></p>
+    </section>
+
+    <!-- ============ 7. ТАЙМЕРЫ ============ -->
+    <section class="card">
+        <h2>7. События, связанные с таймером</h2>
+        <p>Демонстрация <code>setTimeout</code>, <code>setInterval</code>, <code>clearInterval</code>,
+           <code>clearTimeout</code>, <code>requestAnimationFrame</code>.</p>
+
+        <div class="timer-display" id="timer-display">00:00:000</div>
+
+        <div class="timer-btn-group">
+            <button onclick="startTimer()">Старт интервала</button>
+            <button onclick="stopTimer()">Стоп</button>
+            <button onclick="resetTimer()">Сброс</button>
+            <button onclick="scheduleTimeout()">setTimeout (3 сек)</button>
+        </div>
+        <p id="timeout-status"></p>
+
+        <p>Секундомер через <code>requestAnimationFrame</code>:</p>
+        <div class="timer-display" id="raf-display" style="font-size:1.4em;">0.000 c</div>
+        <button onclick="toggleRaf()" id="raf-btn">Старт RAF</button>
+    </section>
+
+    <script src="js/lab15.js"></script>
+</body>
+</html>
